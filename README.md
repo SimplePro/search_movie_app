@@ -15,4 +15,4 @@ MainActivity.kt 에서 MovieViewModel.movie 의 값이 바뀔때마다 리사이
 3. retrofit 을 싱글톤 객체로 어떻게 사용해야 하는지 알게 되었다.
 4. mvvm 패턴의 전반적인 개념을 알 수 있었다.
 
-[<img src="https://img.youtube.com/vi/bkCjKqFC9KQ/maxresdefault.jpg" width="50%">](https://youtu.be/bkCjKqFC9KQ)
+[<img src="https://img.youtube.com/vi/0C4dE9XA37k/maxresdefault.jpg" width="50%">](https://youtu.be/0C4dE9XA37k)
