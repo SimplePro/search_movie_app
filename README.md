@@ -5,6 +5,7 @@
 1. 데이터 바인딩
 2. 뷰모델
 3. 라이브데이터 
+(자료형이 LiveData 인 변수(a)의 활성 관찰자(b)는 해당 변수(a)의 업데이트 정보를 받아 최신값을 대입받는다. a.value == b.value -> True)
 (MovieViewModel.kt 에서 _title 의 값이 바뀔 때마다 영화를 검색하여 movie 의 값을 대입해주었음. 
 MainActivity.kt 에서 MovieViewModel.movie 의 값이 바뀔때마다 리사이클러뷰의 notifyDataSetChanged 를 해주었다.)
 
