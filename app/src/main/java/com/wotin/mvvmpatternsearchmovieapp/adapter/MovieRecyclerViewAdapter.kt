@@ -10,8 +10,13 @@ import com.wotin.mvvmpatternsearchmovieapp.databinding.MovieRecyclerviewItemBind
 import com.wotin.mvvmpatternsearchmovieapp.model.ItemCustomClass
 import com.wotin.mvvmpatternsearchmovieapp.model.MovieCustomClass
 
-class MovieRecyclerViewAdapter(val context : Context) : RecyclerView.Adapter<MovieRecyclerViewAdapter.CustomViewHolder>() {
+class MovieRecyclerViewAdapter(val context : Context, val movieSetOnLongClickInterface: MovieSetOnLongClickInterface) : RecyclerView.Adapter<MovieRecyclerViewAdapter.CustomViewHolder>() {
+
     var movieList : ArrayList<ItemCustomClass> = arrayListOf()
+
+    interface MovieSetOnLongClickInterface {
+        fun movieOnLongClick(movie : ItemCustomClass)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val binding = MovieRecyclerviewItemBinding.inflate(
             LayoutInflater.from(context), parent, false
@@ -21,6 +26,10 @@ class MovieRecyclerViewAdapter(val context : Context) : RecyclerView.Adapter<Mov
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse(movieList[adapterPosition].link)
                 parent.context.startActivity(intent)
+            }
+            itemView.setOnLongClickListener {
+                movieSetOnLongClickInterface.movieOnLongClick(movieList[adapterPosition])
+                return@setOnLongClickListener true
             }
         }
     }
